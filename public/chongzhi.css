@@ -1,0 +1,83 @@
+body,
+ul,
+dl,
+dt,
+dd,
+p,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+img,
+table,
+figure,
+figcaption,
+fieldset,
+legend {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img,
+fieldset {
+    border: 0;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 100;
+}
+
+input,
+a {
+    outline: none;
+}
+
+.ant-progress-inner {
+    height: 0.25rem;
+    margin-top: 0.1rem;
+}
+
+.ant-progress-bg {
+    height: 0.25rem !important;
+}
+
+.slick-dots-bottom {
+    bottom: 0 !important;
+}
+
+.ant-carousel .slick-slide img {
+    width: 100% !important;
+    height: 3rem;
+}
+
+.slick-list {
+    border-radius: 0.4rem;
+}
+
+.ant-input {
+    font-size: 0.4rem !important;
+}

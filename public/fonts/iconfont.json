@@ -1,0 +1,128 @@
+{
+  "id": "2304704",
+  "name": "wangyiyun",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1488892",
+      "name": "播放",
+      "font_class": "bofang1",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "77109",
+      "name": "声波",
+      "font_class": "shengbo",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "551966",
+      "name": "箭头",
+      "font_class": "arrow-right-copy-copy-copy",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "705706",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "759749",
+      "name": "menu2",
+      "font_class": "2601caidan2",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "839006",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "1110404",
+      "name": "箭头 左 小",
+      "font_class": "jiantou2",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "1842121",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "2019095",
+      "name": "我的好友",
+      "font_class": "wodehaoyou",
+      "unicode": "e7c1",
+      "unicode_decimal": 59329
+    },
+    {
+      "icon_id": "2681717",
+      "name": "五角星",
+      "font_class": "wujiaoxing",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "3279340",
+      "name": "已购应用",
+      "font_class": "gaiicon-",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    },
+    {
+      "icon_id": "4198406",
+      "name": "音乐",
+      "font_class": "yinle",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "4933268",
+      "name": "麦克风",
+      "font_class": "maikefeng",
+      "unicode": "e70d",
+      "unicode_decimal": 59149
+    },
+    {
+      "icon_id": "5964567",
+      "name": "音乐",
+      "font_class": "yinle1",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "6999323",
+      "name": "云盘",
+      "font_class": "yunpan",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "12708826",
+      "name": "音乐",
+      "font_class": "yinle2",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "17105078",
+      "name": "menu-unfold-line",
+      "font_class": "menu-unfold-line",
+      "unicode": "e868",
+      "unicode_decimal": 59496
+    }
+  ]
+}

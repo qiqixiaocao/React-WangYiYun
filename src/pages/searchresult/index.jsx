@@ -47,6 +47,8 @@ class SearchResult extends Component {
     this.getSearchResult();
   }
 
+  componentWillUnmount() {}
+
   render() {
     const { allsongs, picUrl, creator } = this.state;
     return (

@@ -15,6 +15,7 @@ class Musicplayer extends Component {
       currentTime: 0,
       musicDetail: "",
       isLoading: false,
+      timer: "",
     };
   }
 
@@ -44,6 +45,10 @@ class Musicplayer extends Component {
         }
       });
   };
+
+  componentWillUnmount() {
+    clearInterval(this.state.timer);
+  }
 
   formatSecond = (time) => {
     const second = Math.floor(time % 60);
@@ -122,10 +127,12 @@ class Musicplayer extends Component {
   rotateImg = () => {
     const musicPic = document.getElementById("musicPic");
     var r = 0;
-    setInterval(() => {
-      musicPic.style.transform = "rotate(" + (r += 10) + "deg)";
-      musicPic.style.transition = "all 1s linear";
-    }, 1000);
+    this.setState({
+      timer: setInterval(() => {
+        musicPic.style.transform = "rotate(" + (r += 10) + "deg)";
+        musicPic.style.transition = "all 1s linear";
+      }, 1000),
+    });
   };
 
   //跳转到歌手详情页
@@ -215,9 +222,9 @@ class Musicplayer extends Component {
               style={{
                 position: "absolute",
                 top: "18%",
-                left: "10%",
-                width: "6rem",
-                height: "6rem",
+                left: "16%",
+                width: "5rem",
+                height: "5rem",
                 borderRadius: "50%",
               }}
             />
@@ -239,7 +246,7 @@ class Musicplayer extends Component {
                 position: "absolute",
                 bottom: "25%",
                 display: "flex",
-                width: "100%",
+                width: "94%",
                 marginTop: "0.2rem",
                 marginLeft: "0.4rem",
                 fontSize: "0.4rem",

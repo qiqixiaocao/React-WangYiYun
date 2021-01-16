@@ -43,6 +43,12 @@ class Musiclist extends Component {
       });
   };
 
+  componentWillUnmount() {
+    this.setState = (state, callback) => {
+      return;
+    };
+  }
+
   goback = () => {
     this.props.history.go(-1);
   };

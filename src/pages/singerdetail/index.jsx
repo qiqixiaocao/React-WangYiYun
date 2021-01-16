@@ -36,6 +36,8 @@ class SingerDetail extends Component {
     this.getSingerDetail();
   }
 
+  componentWillUnmount() {}
+
   render() {
     const { singerDetail } = this.state;
     return (

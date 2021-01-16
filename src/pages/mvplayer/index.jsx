@@ -6,6 +6,7 @@ class MVPlayer extends Component {
     this.state = {
       MVUrl: "",
       MVDetail: [],
+      timer: "",
     };
   }
 
@@ -41,10 +42,12 @@ class MVPlayer extends Component {
   rotateImg = () => {
     const musicPic = document.getElementById("musicPic");
     var r = 0;
-    setInterval(() => {
-      musicPic.style.transform = "rotate(" + (r += 10) + "deg)";
-      musicPic.style.transition = "all 1s linear";
-    }, 1000);
+    this.setState({
+      timer: setInterval(() => {
+        musicPic.style.transform = "rotate(" + (r += 10) + "deg)";
+        musicPic.style.transition = "all 1s linear";
+      }, 1000),
+    });
   };
 
   goback = () => {
@@ -55,6 +58,10 @@ class MVPlayer extends Component {
     this.getMVUrl();
     this.getMVDetail();
     this.rotateImg();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.timer);
   }
 
   render() {

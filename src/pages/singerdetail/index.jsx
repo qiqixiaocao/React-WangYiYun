@@ -7,13 +7,13 @@ class SingerDetail extends Component {
       singerDetail: [],
     };
   }
+
   getSingerDetail = async () => {
     axios
       .get(
         "http://localhost:3000/artists?id=" + localStorage.getItem("singerID")
       )
       .then((res) => {
-        // console.log(res);
         if (res.data.code === 200) {
           this.setState({
             singerDetail: res.data,
@@ -24,7 +24,6 @@ class SingerDetail extends Component {
 
   //跳转至播放页面
   goMusicPlayer = (id) => {
-    // console.log(id);
     localStorage.setItem("musicID", id);
     this.props.history.push("/musicplayer"); //路由跳转
   };
@@ -36,6 +35,7 @@ class SingerDetail extends Component {
   componentDidMount() {
     this.getSingerDetail();
   }
+
   render() {
     const { singerDetail } = this.state;
     return (
@@ -134,7 +134,7 @@ class SingerDetail extends Component {
                     fontSize: "0.3rem",
                   }}
                 >
-                  全部歌曲({singerDetail.hotSongs.length})首
+                  全部歌曲{singerDetail.hotSongs.length}首
                 </span>
               </div>
             </div>
@@ -183,14 +183,26 @@ class SingerDetail extends Component {
                       >
                         {item.name}
                       </p>
-                      <span
-                        style={{
-                          fontSize: "0.3rem",
-                          color: "rgb(254,188,173)",
-                        }}
-                      >
-                        {item.ar[0].name}&nbsp;-&nbsp;{item.al.name}
-                      </span>
+                      {item.ar.length > 1 ? (
+                        <span
+                          style={{
+                            fontSize: "0.3rem",
+                            color: "rgb(254,188,173)",
+                          }}
+                        >
+                          {item.ar[0].name}&nbsp;
+                          {item.ar[1].name}&nbsp;-&nbsp;{item.al.name}
+                        </span>
+                      ) : (
+                        <span
+                          style={{
+                            fontSize: "0.3rem",
+                            color: "rgb(254,188,173)",
+                          }}
+                        >
+                          {item.ar[0].name}&nbsp;-&nbsp;{item.al.name}
+                        </span>
+                      )}
                     </div>
                     <i
                       className="iconfont icon-bofang"

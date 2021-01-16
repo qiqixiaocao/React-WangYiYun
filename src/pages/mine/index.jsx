@@ -14,12 +14,14 @@ class Mine extends Component {
       loading: true,
     };
   }
+
   //控制询问框的显示效果
   showModal = () => {
     this.setState({
       isModalVisible: true,
     });
   };
+
   //点击了确定---退出登录
   handleOk = () => {
     localStorage.clear(); //清除用于判断是否登录的标志
@@ -39,17 +41,20 @@ class Mine extends Component {
       isModalVisible: false,
     });
   };
+
   //点击了取消---隐藏询问框
   handleCancel = () => {
     this.setState({
       isModalVisible: false,
     });
   };
+
   //去歌单详情页面
   gomusiclist = (id) => {
     localStorage.setItem("musiclistID", id);
     this.props.history.push("/musiclist");
   };
+
   //获取用户详情
   getUserMsg = async () => {
     await axios
@@ -66,6 +71,7 @@ class Mine extends Component {
         }
       });
   };
+
   //获取用户歌单
   getPlayList = async () => {
     await axios
@@ -82,6 +88,7 @@ class Mine extends Component {
         }
       });
   };
+
   componentDidMount() {
     Promise.all([this.getUserMsg(), this.getPlayList()]).then((res) => {
       this.setState({
@@ -89,6 +96,7 @@ class Mine extends Component {
       });
     });
   }
+
   render() {
     const { usermsg, playlist, loading } = this.state;
     return (
@@ -103,7 +111,7 @@ class Mine extends Component {
               minHeight: "100%",
               padding: "0.4rem 0.4rem 0.9rem 0.4rem",
               boxSizing: "border-box",
-              backgroundImage: "url(" + usermsg.profile.backgroundUrl + ")",
+              backgroundImage: "url(" + localStorage.getItem("bgUrl") + ")",
               backgroundRepeat: "no-repeat",
               backgroundSize: "100% 100%",
               backgroundAttachment: "fixed",
@@ -163,14 +171,13 @@ class Mine extends Component {
                     padding: "0.3rem",
                   }}
                 >
-                  {/* {console.log(this.state.playlist)} */}
                   <p
                     style={{
                       fontSize: "0.4rem",
                       color: "rgb(254,188,173)",
                     }}
                   >
-                    我的歌单({usermsg.profile.playlistCount})个
+                    我的歌单{usermsg.profile.playlistCount}个
                   </p>
                   <ul
                     style={{

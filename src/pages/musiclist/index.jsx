@@ -9,6 +9,7 @@ class Musiclist extends Component {
       allsongs: [],
     };
   }
+
   componentDidMount = async () => {
     let newArr = [];
     let that = this;
@@ -41,13 +42,16 @@ class Musiclist extends Component {
         }
       });
   };
+
   goback = () => {
     this.props.history.go(-1);
   };
+
   gomusicplay = (id) => {
     localStorage.setItem("musicID", id);
     this.props.history.push("/musicplayer");
   };
+
   render() {
     const { listdetail, allsongs, creator } = this.state;
     return (
@@ -146,7 +150,7 @@ class Musiclist extends Component {
                     fontSize: "0.3rem",
                   }}
                 >
-                  全部歌曲({allsongs.length})首
+                  全部歌曲{allsongs.length}首
                 </span>
               </div>
             </div>

@@ -19,6 +19,7 @@ import MVPlayer from "./pages/mvplayer";
 import Singer from "./pages/singer";
 import Recommend from "./pages/recommend";
 import SingerDetail from "./pages/singerdetail";
+import SearchResult from "./pages/searchresult";
 function ProtectedRoute(props) {
   const isLogin = localStorage.getItem("userID") ? true : false; //判断是否登录
   const { children, ...rest } = props; //children是原有的路由地址
@@ -56,6 +57,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/mvplayer" component={MVPlayer} />
           <Route path="/singerdetail" component={SingerDetail} />
+          <Route path="/searchresult" component={SearchResult} />
           <ProtectedRoute path="/">
             <Home />
           </ProtectedRoute>

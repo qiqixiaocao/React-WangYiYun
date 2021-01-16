@@ -1,6 +1,4 @@
 import { Component } from "react";
-// import axios from "axios";
-// import { message } from "antd";
 class Userinfo extends Component {
   constructor(props) {
     super(props);

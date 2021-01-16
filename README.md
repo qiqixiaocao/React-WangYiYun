@@ -1,70 +1,15 @@
-# Getting Started with Create React App
+# 这是什么？
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这是由戚戚小草独立开发的高彷网易云 app，主要使用 React 前端框架开发，其中包含 HTML + CSS + Sass + React + LocalStorage + Cookie + antd-design 等技术手段，主要使用 VScode 编译代码，GitHub 托管代码。
+其中包含七大模块：登录模块、注册模块、发现模块、歌手/歌单模块、我的模块、推荐模块、播放器模块。登录模块有对表单的正则校验，通过按钮的 disabled 属性来告知用户表单是否已填写完毕。注册模块可以实现简单的注册功能。发现模块为项目的主页，有简单的轮播图，一些个性化的推荐，搜索框功能齐全，可以获取任何搜索结果，并且能够点击搜索结果跳转至搜索结果。歌手页面可以根据点击的不同获取不同类型的歌手，点击歌手可跳转到歌手详情页，能够查看歌手单曲并且跳转至播放页面播放，歌单页可以显示对应歌单的内容，创建者，及创建者头像，单曲均可点击播放。我的模块能够获取登录用户的头像，昵称，等级，歌单等信息并展示出来。推荐模块可以显示热搜榜单，云音乐推荐榜单，歌手榜单，并且均实现了按需加载。播放器模块能实现对应歌曲的播放，对应 MV 的播放。
 
-## Available Scripts
+## 如何运行？
 
-In the project directory, you can run:
+1、克隆本项目，打开集成终端 cnpm i 安装所需项目依赖
+2、克隆网易云接口项目 地址：https://github.com/Binaryify/NeteaseCloudMusicApi.git，打开集成终端 cnpm i 安装所需项目依赖
+3、运行网易云接口，打开集成终端 nodemon app
+4、运行本项目 yarn start 若提示端口占用 输入 y
 
-### `yarn start`
+### 写在最后
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+本项目仅供学习使用，不做任何商业用途，编辑于 2021/01/16 15:58

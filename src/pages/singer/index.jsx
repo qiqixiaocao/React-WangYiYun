@@ -19,7 +19,6 @@ class Singer extends Component {
     await axios
       .get(`http://localhost:3000/artist/list?area=${type}&limit=${limit}`)
       .then((res) => {
-        // console.log(res);
         if (res.data.code === 200) {
           this.setState({
             singers: res.data.artists,
@@ -30,7 +29,6 @@ class Singer extends Component {
 
   //跳转到歌手详情页面
   goSingerDetail = async (id) => {
-    // console.log(id);
     localStorage.setItem("singerID", id);
     this.props.history.push("/singerdetail");
   };
@@ -79,15 +77,15 @@ class Singer extends Component {
         this.getSingers(0, 9);
     }
   };
+
   render() {
     var { singers, type, limit } = this.state;
-    // console.log(type, limit);
     return (
       <div
         style={{
           width: "100%",
           minHeight: "100%",
-          padding: "0.4rem 0 0.4rem 0.4rem",
+          padding: "0.4rem 0.4rem 0.9rem 0.4rem",
           boxSizing: "border-box",
           backgroundImage: "url(" + localStorage.getItem("bgUrl") + ")",
           backgroundRepeat: "no-repeat",
@@ -100,9 +98,10 @@ class Singer extends Component {
           defaultValue="a"
           buttonStyle="solid"
           style={{
-            width: "95%",
+            width: "100%",
             display: "flex",
             justifyContent: "space-between",
+            marginBottom: "0.2rem",
           }}
         >
           <Radio.Button value="a">华语</Radio.Button>
@@ -113,12 +112,11 @@ class Singer extends Component {
         </Radio.Group>
         <ul
           style={{
-            width: "95%",
+            width: "100%",
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "space-between",
             alignContent: "space-between",
-            marginTop: "0.4rem",
           }}
         >
           {singers.map((val) => (
@@ -136,20 +134,19 @@ class Singer extends Component {
                 src={val.img1v1Url}
                 alt=""
                 style={{
-                  width: "1.6rem",
-                  height: "1.6rem",
-                  borderRadius: "50%",
-                  margin: "0 auto",
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "0.3rem",
                 }}
               />
               <p
                 style={{
-                  height: "0.9rem",
+                  height: "0.5rem",
                   fontSize: "0.28rem",
-                  color: "rgb(254,248,228)",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
                   marginTop: "0.2rem",
+                  color: "rgb(254, 188, 173)",
                   textAlign: "center",
                 }}
               >
@@ -160,17 +157,16 @@ class Singer extends Component {
         </ul>
         <Button
           shape="round"
-          type="primary"
+          ghost
           style={{
             display: "block",
             margin: "0 auto",
-            marginBottom: "1rem",
+            color: "rgb(254, 188, 173)",
           }}
           onClick={() => {
             this.setState({
               limit: (limit += 9),
             });
-            // console.log(limit, type);
             this.getSingers(type, limit);
           }}
         >
@@ -181,4 +177,5 @@ class Singer extends Component {
     );
   }
 }
+
 export default withRouter(Singer);

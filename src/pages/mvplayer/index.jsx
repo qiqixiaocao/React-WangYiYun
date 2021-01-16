@@ -16,7 +16,6 @@ class MVPlayer extends Component {
         "http://localhost:3000/mv/detail?mvid=" + localStorage.getItem("mvID")
       )
       .then((res) => {
-        // console.log(res);
         if (res.data.code === 200) {
           this.setState({
             MVDetail: res.data.data,
@@ -30,7 +29,6 @@ class MVPlayer extends Component {
     await axios
       .get("http://localhost:3000/mv/url?id=" + localStorage.getItem("mvID"))
       .then((res) => {
-        // console.log(res);
         if (res.data.code === 200) {
           this.setState({
             MVUrl: res.data.data.url,
@@ -52,6 +50,7 @@ class MVPlayer extends Component {
   goback = () => {
     this.props.history.go(-1);
   };
+
   componentDidMount() {
     this.getMVUrl();
     this.getMVDetail();

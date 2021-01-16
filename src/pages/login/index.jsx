@@ -31,7 +31,6 @@ class Login extends Component {
           },
         })
         .then((res) => {
-          //   console.log(res.data);
           if (res.data.code === 200) {
             message.success("登录成功！", 3);
             localStorage.setItem("userID", res.data.profile.userId);

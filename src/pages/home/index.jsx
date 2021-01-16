@@ -42,7 +42,7 @@ class Home extends Component {
   //搜索
   onChange = async (e) => {
     await axios
-      .get("http://localhost:3000/search?keywords=" + e.target.value)
+      .get("http://localhost:3000/cloudsearch?keywords=" + e.target.value)
       .then((res) => {
         if (res.data.code === 200) {
           this.setState({
@@ -55,16 +55,14 @@ class Home extends Component {
         songs: [],
       });
     }
-    // console.log(this.state.songs);
   };
 
-  //获取推荐歌单
+  //获取推荐歌单(默认获取9条)
   getNewMusicList = async (SongLimit) => {
     if (SongLimit <= 54) {
       await axios
         .get(`http://localhost:3000/personalized?limit=${SongLimit}`)
         .then((res) => {
-          // console.log(res.data.result);
           if (res.data.code === 200) {
             this.setState({
               NewMusicList: res.data.result,
@@ -76,13 +74,12 @@ class Home extends Component {
     }
   };
 
-  //获取推荐MV
+  //获取推荐MV(默认获取9条)
   getNewMV = async (MVLimit) => {
     if (MVLimit <= 54) {
       await axios
         .get(`http://localhost:3000/mv/first?limit=${MVLimit}`)
         .then((res) => {
-          //   console.log(res);
           if (res.data.code === 200) {
             this.setState({
               NewMV: res.data.data,
@@ -111,21 +108,18 @@ class Home extends Component {
 
   //跳转至播放页面
   goMusicPlayer = (id) => {
-    // console.log(id);
     localStorage.setItem("musicID", id);
     this.props.history.push("/musicplayer"); //路由跳转
   };
 
   //跳转至歌单详情页面
   goMusicList = (id) => {
-    // console.log(id);
     localStorage.setItem("musiclistID", id);
     this.props.history.push("/musiclist");
   };
 
   //跳转至MV播放页面
   goMVPlayer = (id) => {
-    // console.log(id);
     localStorage.setItem("mvID", id);
     this.props.history.push("/mvplayer");
   };
@@ -135,7 +129,6 @@ class Home extends Component {
     this.getNewMusicList(9);
     this.getNewMV(9);
     this.getUserMsg();
-    // this.getDefaultWords();
   }
 
   render() {
@@ -207,7 +200,7 @@ class Home extends Component {
                     this.goMusicPlayer(val.id);
                   }}
                 >
-                  {val.name}-{val.artists[0].name}
+                  {val.name}-{val.ar[0].name}
                 </li>
               ))}
             </ul>

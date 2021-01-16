@@ -306,7 +306,6 @@ class Home extends Component {
           >
             推荐MV
           </h3>
-
           <ul
             style={{
               width: "100%",
@@ -322,6 +321,7 @@ class Home extends Component {
                 style={{
                   width: "30%",
                   height: "20%",
+                  marginBottom: "0.3rem",
                 }}
                 onClick={() => {
                   this.goMVPlayer(val.id);
@@ -338,15 +338,23 @@ class Home extends Component {
                 />
                 <p
                   style={{
-                    height: "0.9rem",
+                    height: "0.4rem",
                     fontSize: "0.28rem",
                     overflow: "hidden",
+                    whiteSpace: "nowrap",
                     textOverflow: "ellipsis",
-                    marginTop: "0.2rem",
+                    marginBottom: "0.1rem",
                   }}
                 >
-                  {val.name}-{val.artistName}
+                  {val.name}
                 </p>
+                <span
+                  style={{
+                    fontSize: "0.25rem",
+                  }}
+                >
+                  {val.artists[0].name}
+                </span>
               </li>
             ))}
             <Button

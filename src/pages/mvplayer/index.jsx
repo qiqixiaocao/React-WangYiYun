@@ -6,6 +6,10 @@ class MVPlayer extends Component {
     this.state = {
       MVUrl: "",
       MVDetail: [],
+      singerOne: "",
+      singerTwo: "",
+      artistOne: "",
+      artistTwo: "",
       timer: "",
     };
   }
@@ -20,6 +24,16 @@ class MVPlayer extends Component {
         if (res.data.code === 200) {
           this.setState({
             MVDetail: res.data.data,
+            singerOne: res.data.data.artists[0].id,
+            singerTwo:
+              res.data.data.artists.length > 1
+                ? res.data.data.artists[1].id
+                : "",
+            artistOne: res.data.data.artists[0].name,
+            artistTwo:
+              res.data.data.artists.length > 1
+                ? res.data.data.artists[1].name
+                : "",
           });
         }
       });
@@ -50,6 +64,16 @@ class MVPlayer extends Component {
     });
   };
 
+  gosingerdetail = (num) => {
+    if (num === 1) {
+      localStorage.setItem("singerID", this.state.singerOne);
+      this.props.history.push("/singerdetail");
+    } else {
+      localStorage.setItem("singerID", this.state.singerTwo);
+      this.props.history.push("/singerdetail");
+    }
+  };
+
   goback = () => {
     this.props.history.go(-1);
   };
@@ -65,7 +89,7 @@ class MVPlayer extends Component {
   }
 
   render() {
-    const { MVUrl, MVDetail } = this.state;
+    const { MVUrl, MVDetail, artistOne, artistTwo } = this.state;
     return (
       <div
         style={{
@@ -117,10 +141,28 @@ class MVPlayer extends Component {
             <span
               style={{
                 fontSize: "0.3rem",
+                marginRight: "0.2rem",
+              }}
+              onClick={() => {
+                this.gosingerdetail(1);
               }}
             >
-              {MVDetail.artistName}
+              {artistOne}
             </span>
+            {!artistTwo ? (
+              <></>
+            ) : (
+              <span
+                style={{
+                  fontSize: "0.3rem",
+                }}
+                onClick={() => {
+                  this.gosingerdetail(2);
+                }}
+              >
+                {artistTwo}
+              </span>
+            )}
           </p>
           <img
             id={"musicPic"}
@@ -142,27 +184,35 @@ class MVPlayer extends Component {
             height: "6rem",
           }}
         ></video>
-        <p
-          style={{
-            color: "rgb(254,248,228)",
-            fontSize: "0.4rem",
-            textAlign: "center",
-          }}
-        >
-          MV详情
-        </p>
-        <p
-          style={{
-            width: "90%",
-            marginLeft: "5%",
-            color: "rgb(254,248,228)",
-            fontSize: "0.4rem",
-            marginBottom: "0",
-            paddingBottom: "5%",
-          }}
-        >
-          {MVDetail.desc}
-        </p>
+
+        {!MVDetail.desc ? (
+          <></>
+        ) : (
+          <>
+            <p
+              style={{
+                color: "rgb(254,248,228)",
+                fontSize: "0.4rem",
+                textAlign: "center",
+              }}
+            >
+              MV详情
+            </p>
+            <span
+              style={{
+                display: "block",
+                width: "90%",
+                marginLeft: "5%",
+                color: "rgb(254,248,228)",
+                fontSize: "0.4rem",
+                marginBottom: "0",
+                paddingBottom: "5%",
+              }}
+            >
+              {MVDetail.desc}
+            </span>
+          </>
+        )}
       </div>
     );
   }

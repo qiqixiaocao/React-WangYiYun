@@ -5,13 +5,15 @@
 
 ## 如何运行？
 
-1、克隆本项目，打开集成终端 cnpm i 安装所需项目依赖
-2、克隆网易云接口项目 地址：https://github.com/Binaryify/NeteaseCloudMusicApi.git
+1、首先安装cnpm，win+R cmd 输入 npm install -g cnpm --registry=https://registry.npm.taobao.org
+2、安装nodemon win+R cmd 输入 npm i nodemon -g
+3、克隆本项目，打开集成终端 cnpm i 安装所需项目依赖
+4、克隆网易云接口项目 地址：https://github.com/Binaryify/NeteaseCloudMusicApi.git
 ，打开集成终端 cnpm i 安装所需项目依赖
-3、运行网易云接口，打开集成终端 nodemon app
-4、运行本项目 yarn start 若提示端口占用 输入 y
-5、若没安装 react 脚手架 win+R cmd 输入 npm i -g create-react-app 全局安装 react 脚手架
-6、若没安装 yarn win+R cmd 输入 npm install -g yarn 全局安装 yarn
+5、运行网易云接口，打开集成终端 nodemon app
+6、运行本项目 cnpm start 若提示端口占用 输入 y
+7、若没安装 react 脚手架 win+R cmd 输入 npm i -g create-react-app 全局安装 react 脚手架
+
 
 ### 写在最后
 
